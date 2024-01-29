@@ -1,0 +1,306 @@
+[% PROCESS "$templates_dir/sai_thrift_utils.tt" -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK typedef_declaration -%]
+    [%- IF dbg -%]
+// [% type.type.name %] [% type.name %][% IF type.raw %] (raw)[% END %];
+
+    [%- END -%]
+message [% type.thrift_name %] {
+    [% type.thrift_def_gpb %] value = 1;
+}
+
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_api_typedefs -%]
+    [%- FOREACH type IN apis.$api.typedefs %]
+        [%- PROCESS typedef_declaration -%]
+    [%- END -%]
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_typedefs -%]
+// common types
+message sai_thrift_int {
+    int32 value = 1;
+}
+
+
+    [%- PROCESS define_api_typedefs api = 'common' -%]
+
+    [%- FOREACH api IN apis.keys.sort -%]
+        [%- IF apis.$api.typedefs.size and api != 'common' -%]
+
+// [% api %] API types
+
+             [%- PROCESS define_api_typedefs -%]
+         [%- END -%]
+    [%- END -%]
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- # TODO: This is workaround, it should be removed -%]
+[%- BLOCK define_object_structs -%]
+// object API structures
+// warning: this struct is invalid and  manually defined - do not use
+message sai_thrift_object_key_entry_t {
+    int64 object_id = 1;
+    int64 fdb_entry = 2;
+    int64 neighbor_entry = 3;
+    int64 route_entry = 4;
+    int64 mcast_fdb_entry = 5;
+    int64 l2mc_entry = 6;
+    int64 ipmc_entry = 7;
+    int64 inseg_entry = 8;
+    int64 nat_entry = 9;
+}
+
+message sai_thrift_object_key_t {
+    sai_thrift_object_key_entry_t key = 1;
+}
+
+message sai_thrift_attr_capability_t {
+    bool create_implemented = 1;
+    bool boolset_implemented = 2;
+    bool get_implemented = 3;
+}
+
+message sai_thrift_query_attribute_enum_values_capability_msg_arg {
+    sai_thrift_object_type_t object_type = 1;
+    sai_thrift_attr_id_t attr_id = 2;
+    int32 caps_count = 3;
+}
+
+message sai_thrift_object_type_get_availability_msg_arg {
+    sai_thrift_object_type_t object_type = 1;
+    sai_thrift_attr_id_t attr_id = 2;
+    int32 attr_type = 3;
+}
+
+message sai_thrift_string_response {
+    string value = 1;
+}
+
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_api_structs -%]
+            [%- FOREACH struct IN apis.$api.structs %]
+                [%- PROCESS struct_declaration %]
+
+            [%- END %]
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK struct_declaration -%]
+message [% struct.thrift_name %] {
+    [%- id = 1; FOREACH member IN struct.members %]
+        [%- IF dbg %]
+  // [% member.type.name %] [% member.name %];
+        [%- END -%]
+        [%- # TODO: The condition is a workaround, it should be removed and only 'ELSE' part should be kept -%]
+        [%- IF struct.thrift_name == 'sai_thrift_attr_condition_t' AND member.type.thrift_name == 'sai_thrift_attribute_value_t' AND member.name == 'condition' -%]
+
+    int64 [% member.thrift_name %] = [% id; id = id + 1 %];
+        [%- ELSE -%]
+
+    [% member.type.thrift_name %] [% member.thrift_name %] = [% id; id = id + 1 %];
+        [%- END -%]
+    [%- END %]
+}
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_structs -%]
+[% # TODO: This is workaround, it should be removed -%]
+[%- PROCESS define_object_structs %]
+[% # TODO: This is end of workaround, it should be removed -%]
+
+// common types
+
+    [%- PROCESS define_api_structs api = 'common' -%]
+
+    [%- FOREACH api IN apis.keys.sort -%]
+        [%- # TODO: Comparison to 'object' is a part of workaround, it should be removed -%]
+        [%- IF apis.$api.structs.size and api != 'common' and api != 'object' -%]
+// [% api %] API structures
+
+            [%- PROCESS define_api_structs %]
+        [%- END -%]
+    [%- END %]
+
+    [%- PROCESS define_attribute_list -%]
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_exceptions -%]
+
+// error handling
+message sai_thrift_exception {
+    sai_thrift_status_t status = 1;
+}
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_empty_response -%]
+
+// error handling
+message sai_thrift_response {
+    bool success = 1;
+}
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_attribute_list -%]
+// common attribute list
+message sai_thrift_attribute_list_t {
+    repeated sai_thrift_attribute_t attr_list = 1;
+    sai_thrift_int32_t attr_count = 2;
+}
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK function_debug_info -%]
+    [%- IF dbg -%]
+
+    // [% function.dbg_info %]
+
+        [%- IF function.object -%]
+            [%- IF function.operation == 'create' -%]
+    // [% function.object %] mandatory attrs: [% FOREACH attr IN apis.$api.objects.${function.object}.attrs.mandatory %][% attr.simple_name %], [% END %]
+
+            [%- END -%]
+            [%- IF function.operation == 'stats' -%]
+    // [% function.object %] stats: [% FOREACH stat IN apis.$api.objects.${function.object}.stats.all %][% stat.simple_name %], [% END %]
+            [%- ELSE -%]
+    // [% function.object %] mandatory attrs: [% FOREACH attr IN apis.$api.objects.${function.object}.attrs.${function.operation} %][% attr.simple_name %], [% END %]
+            [%- END %]
+
+        [%- END -%]
+    [%- END -%]
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK function_declaration -%]
+    rpc [% function.thrift_name %]([% function.thrift_name %]_msg_args)
+    [%- IF function.rpc_return.type.thrift_name == 'void' -%]
+        returns (sai_thrift_response);
+
+    [%- ELSIF function.rpc_return.type.thrift_name == 'string' -%]
+        returns (sai_thrift_string_response);
+
+    [%- ELSE -%]
+        returns ([% function.rpc_return.type.thrift_name %]);
+    [% END -%]
+
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_api_functions -%]
+    [%- FOREACH function IN apis.$api.functions -%]
+        [%- PROCESS function_debug_info -%]
+
+        [%- PROCESS function_declaration -%]
+    [%- END -%]
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_functions -%]
+    [%- IF apis.common.functions.size -%]
+
+    // common functions
+    [%- PROCESS define_api_functions api = 'common' -%]
+    [%- END -%]
+
+    [%- FOREACH api IN apis.keys.sort -%]
+        [%- IF apis.$api.functions.size and api != 'common' %]
+    // [% api %] API
+
+            [%- PROCESS define_api_functions -%]
+        [%- END -%]
+
+    [%- END -%]
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_message_sai_args -%]
+[%- FOREACH api IN apis.keys.sort -%]
+[%- FOREACH function IN apis.$api.functions -%]
+message [% function.thrift_name %]_msg_args {
+    [%- id = 1; FOREACH rpcarg IN function.args %]
+    [% rpcarg.type.thrift_name %] [% rpcarg.name %] = [%- id; id = id + 1 %];
+    [%- END %]
+}
+[% END -%]
+[% END -%]
+[%- END -%]
+
+[%- SET new_template = template_text.replace('sai_thrift_', 'sai_grpc_') -%]
+
+[%- # The body of the file: -%]
+// AUTOGENERATED FILE! DO NOT EDIT
+
+syntax = "proto3";
+
+//package my_package;
+
+
+[% PROCESS define_typedefs %]
+
+[% PROCESS define_structs %]
+
+[% PROCESS define_exceptions %]
+
+[% PROCESS define_empty_response %]
+
+[% PROCESS define_message_sai_args %]
+
+service sai_rpc {
+
+    [%- PROCESS define_functions %]
+    [%- PROCESS define_utils_functions %]
+    [%- new_template -%]
+}
+

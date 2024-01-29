@@ -1,0 +1,1000 @@
+ 1150  terminal length 0
+ 1151  terminal monitor disable
+ 1152  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1153  terminal width 511
+ 1154  terminal length 0
+ 1155  terminal monitor disable
+ 1156  ls /opt/tibit/oltsim/
+ 1157  ifconfig | grep enp1s0f1
+ 1158  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1159  ifconfig enp1s0f1.4090 up
+ 1160  cat /etc/tibit/oltsim/SimInit.json
+ 1161  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1162  rm -rf /opt/tibit/oltsim/database
+ 1163  mkdir /opt/tibit/oltsim/database
+ 1164  ls /opt/tibit/oltsim/database.tgz
+ 1165  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1166  sed -i 's/"# of ONUs": .*/"# of ONUs": 1,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1167  sed -i 's/"Max OLTs": .*/"Max OLTs": 1,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1168  rm -rf /opt/tibit/oltsim/database
+ 1169  mkdir /opt/tibit/oltsim/database
+ 1170  ls /opt/tibit/oltsim/database.tgz
+ 1171  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1172  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1173  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1174  rm -rf /opt/tibit/oltsim/database
+ 1175  mkdir /opt/tibit/oltsim/database
+ 1176  ls /opt/tibit/oltsim/database.tgz
+ 1177  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1178  sed -i 's/"# of ONUs": .*/"# of ONUs": 64,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1179  sed -i 's/"Max OLTs": .*/"Max OLTs": 32,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1180  rm -rf /opt/tibit/oltsim/database
+ 1181  mkdir /opt/tibit/oltsim/database
+ 1182  ls /opt/tibit/oltsim/database.tgz
+ 1183  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1184  sed -i 's/"# of ONUs": .*/"# of ONUs": 64,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1185  sed -i 's/"Max OLTs": .*/"Max OLTs": 19,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1186  rm -rf /opt/tibit/oltsim/database
+ 1187  mkdir /opt/tibit/oltsim/database
+ 1188  ls /opt/tibit/oltsim/database.tgz
+ 1189  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1190  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1191  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1192  rm -rf /opt/tibit/oltsim/database
+ 1193  mkdir /opt/tibit/oltsim/database
+ 1194  ls /opt/tibit/oltsim/database.tgz
+ 1195  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1196  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1197  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1198  terminal width 511
+ 1199  terminal length 0
+ 1200  terminal monitor disable
+ 1201  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1202  terminal width 511
+ 1203  terminal length 0
+ 1204  terminal monitor disable
+ 1205  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1206  terminal width 511
+ 1207  terminal length 0
+ 1208  terminal monitor disable
+ 1209  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1210  terminal width 511
+ 1211  terminal length 0
+ 1212  terminal monitor disable
+ 1213  ls /opt/tibit/oltsim/
+ 1214  ifconfig | grep enp1s0f1
+ 1215  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1216  ifconfig enp1s0f1.4090 up
+ 1217  cat /etc/tibit/oltsim/SimInit.json
+ 1218  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1219  rm -rf /opt/tibit/oltsim/database
+ 1220  mkdir /opt/tibit/oltsim/database
+ 1221  ls /opt/tibit/oltsim/database.tgz
+ 1222  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1223  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1224  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1225  /etc/tibit/oltsim/SimInit.json
+ 1226  rm -rf /opt/tibit/oltsim/database
+ 1227  mkdir /opt/tibit/oltsim/database
+ 1228  ls /opt/tibit/oltsim/database.tgz
+ 1229  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1230  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1231  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1232  /etc/tibit/oltsim/SimInit.json
+ 1233  rm -rf /opt/tibit/oltsim/database
+ 1234  mkdir /opt/tibit/oltsim/database
+ 1235  ls /opt/tibit/oltsim/database.tgz
+ 1236  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1237  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1238  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1239  rm -rf /opt/tibit/oltsim/database
+ 1240  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1241  screen -x
+ 1242  terminal width 511
+ 1243  terminal length 0
+ 1244  terminal monitor disable
+ 1245  timeout 4500 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1246  terminal width 511
+ 1247  terminal length 0
+ 1248  terminal monitor disable
+ 1249  ls /opt/tibit/oltsim/
+ 1250  ifconfig | grep enp1s0f1
+ 1251  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1252  ifconfig enp1s0f1.4090 up
+ 1253  cat /etc/tibit/oltsim/SimInit.json
+ 1254  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1255  rm -rf /opt/tibit/oltsim/database
+ 1256  mkdir /opt/tibit/oltsim/database
+ 1257  ls /opt/tibit/oltsim/database.tgz
+ 1258  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1259  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1260  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1261  cat /etc/tibit/oltsim/SimInit.json
+ 1262  rm -rf /opt/tibit/oltsim/database
+ 1263  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1264  terminal width 511
+ 1265  terminal length 0
+ 1266  terminal monitor disable
+ 1267  timeout 4500 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1268  terminal width 511
+ 1269  terminal length 0
+ 1270  terminal monitor disable
+ 1271  ls /opt/tibit/oltsim/
+ 1272  ifconfig | grep enp1s0f1
+ 1273  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1274  ifconfig enp1s0f1.4090 up
+ 1275  cat /etc/tibit/oltsim/SimInit.json
+ 1276  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1277  rm -rf /opt/tibit/oltsim/database
+ 1278  mkdir /opt/tibit/oltsim/database
+ 1279  ls /opt/tibit/oltsim/database.tgz
+ 1280  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1281  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1282  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1283  rm -rf /opt/tibit/oltsim/database
+ 1284  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1285  terminal width 511
+ 1286  terminal length 0
+ 1287  terminal monitor disable
+ 1288  timeout 4500 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1289  terminal width 511
+ 1290  terminal length 0
+ 1291  terminal monitor disable
+ 1292  ls /opt/tibit/oltsim/
+ 1293  ifconfig | grep enp1s0f1
+ 1294  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1295  ifconfig enp1s0f1.4090 up
+ 1296  cat /etc/tibit/oltsim/SimInit.json
+ 1297  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1298  rm -rf /opt/tibit/oltsim/database
+ 1299  mkdir /opt/tibit/oltsim/database
+ 1300  ls /opt/tibit/oltsim/database.tgz
+ 1301  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1302  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1303  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1304  rm -rf /opt/tibit/oltsim/database
+ 1305  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1306  terminal width 511
+ 1307  terminal length 0
+ 1308  run cat /opt/cisco/thinxr/am_i_thinxr
+ 1309  run cat /etc/bake-info.txt
+ 1310  timeout 7200 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1311  terminal width 511
+ 1312  terminal length 0
+ 1313  run cat /opt/cisco/thinxr/am_i_thinxr
+ 1314  run cat /etc/bake-info.txt
+ 1315  ls /opt/tibit/oltsim/
+ 1316  ifconfig
+ 1317  cat /etc/tibit/oltsim/SimInit.json
+ 1318  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1319  rm -rf /opt/tibit/oltsim/database
+ 1320  mkdir /opt/tibit/oltsim/database
+ 1321  ls /opt/tibit/oltsim/database.tgz
+ 1322  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1323  sed -i 's/"# of ONUs": .*/"# of ONUs": 1,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1324  sed -i 's/"Max OLTs": .*/"Max OLTs": 1,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1325  rm -rf /opt/tibit/oltsim/database
+ 1326  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1327  terminal width 511
+ 1328  terminal length 0
+ 1329  terminal monitor disable
+ 1330  timeout 4500 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1331  terminal width 511
+ 1332  terminal length 0
+ 1333  terminal monitor disable
+ 1334  ls /opt/tibit/oltsim/
+ 1335  ifconfig | grep enp1s0f1
+ 1336  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1337  ifconfig enp1s0f1.4090 up
+ 1338  cat /etc/tibit/oltsim/SimInit.json
+ 1339  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1340  rm -rf /opt/tibit/oltsim/database
+ 1341  mkdir /opt/tibit/oltsim/database
+ 1342  ls /opt/tibit/oltsim/database.tgz
+ 1343  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1344  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1345  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1346  rm -rf /opt/tibit/oltsim/database
+ 1347  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1348  terminal width 511
+ 1349  terminal length 0
+ 1350  terminal monitor disable
+ 1351  timeout 4500 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1352  terminal width 511
+ 1353  terminal length 0
+ 1354  terminal monitor disable
+ 1355  ls /opt/tibit/oltsim/
+ 1356  ifconfig | grep enp1s0f1
+ 1357  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1358  ifconfig enp1s0f1.4090 up
+ 1359  cat /etc/tibit/oltsim/SimInit.json
+ 1360  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1361  rm -rf /opt/tibit/oltsim/database
+ 1362  mkdir /opt/tibit/oltsim/database
+ 1363  ls /opt/tibit/oltsim/database.tgz
+ 1364  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1365  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1366  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1367  rm -rf /opt/tibit/oltsim/database
+ 1368  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1369  terminal width 511
+ 1370  terminal length 0
+ 1371  terminal monitor disable
+ 1372  timeout 4500 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1373  terminal width 511
+ 1374  terminal length 0
+ 1375  terminal monitor disable
+ 1376  ls /opt/tibit/oltsim/
+ 1377  ifconfig | grep enp1s0f1
+ 1378  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1379  ifconfig enp1s0f1.4090 up
+ 1380  cat /etc/tibit/oltsim/SimInit.json
+ 1381  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1382  rm -rf /opt/tibit/oltsim/database
+ 1383  mkdir /opt/tibit/oltsim/database
+ 1384  ls /opt/tibit/oltsim/database.tgz
+ 1385  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1386  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1387  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1388  rm -rf /opt/tibit/oltsim/database
+ 1389  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1390  terminal width 511
+ 1391  terminal length 0
+ 1392  terminal monitor disable
+ 1393  timeout 4500 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1394  terminal width 511
+ 1395  terminal length 0
+ 1396  terminal monitor disable
+ 1397  ls /opt/tibit/oltsim/
+ 1398  ifconfig | grep enp1s0f1
+ 1399  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1400  ifconfig enp1s0f1.4090 up
+ 1401  cat /etc/tibit/oltsim/SimInit.json
+ 1402  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1403  rm -rf /opt/tibit/oltsim/database
+ 1404  mkdir /opt/tibit/oltsim/database
+ 1405  ls /opt/tibit/oltsim/database.tgz
+ 1406  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1407  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1408  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1409  cat /etc/tibit/oltsim/SimInit.json
+ 1410  rm -rf /opt/tibit/oltsim/database
+ 1411  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1412  terminal width 511
+ 1413  terminal length 0
+ 1414  terminal monitor disable
+ 1415  timeout 10000 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1416  terminal width 511
+ 1417  terminal length 0
+ 1418  terminal monitor disable
+ 1419  ls /opt/tibit/oltsim/
+ 1420  ifconfig | grep enp1s0f1
+ 1421  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1422  ifconfig enp1s0f1.4090 up
+ 1423  cat /etc/tibit/oltsim/SimInit.json
+ 1424  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1425  rm -rf /opt/tibit/oltsim/database
+ 1426  mkdir /opt/tibit/oltsim/database
+ 1427  ls /opt/tibit/oltsim/database.tgz
+ 1428  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1429  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1430  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1431  rm -rf /opt/tibit/oltsim/database
+ 1432  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1433  terminal width 511
+ 1434  terminal length 0
+ 1435  terminal monitor disable
+ 1436  timeout 10000 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1437  terminal width 511
+ 1438  terminal length 0
+ 1439  terminal monitor disable
+ 1440  ls /opt/tibit/oltsim/
+ 1441  ifconfig | grep enp1s0f1
+ 1442  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1443  ifconfig enp1s0f1.4090 up
+ 1444  cat /etc/tibit/oltsim/SimInit.json
+ 1445  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1446  rm -rf /opt/tibit/oltsim/database
+ 1447  mkdir /opt/tibit/oltsim/database
+ 1448  ls /opt/tibit/oltsim/database.tgz
+ 1449  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1450  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1451  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1452  rm -rf /opt/tibit/oltsim/database
+ 1453  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1454  terminal width 511
+ 1455  terminal length 0
+ 1456  terminal monitor disable
+ 1457  timeout 10000 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1458  terminal width 511
+ 1459  terminal length 0
+ 1460  terminal monitor disable
+ 1461  ls /opt/tibit/oltsim/
+ 1462  ifconfig | grep enp1s0f1
+ 1463  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1464  ifconfig enp1s0f1.4090 up
+ 1465  cat /etc/tibit/oltsim/SimInit.json
+ 1466  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1467  rm -rf /opt/tibit/oltsim/database
+ 1468  mkdir /opt/tibit/oltsim/database
+ 1469  ls /opt/tibit/oltsim/database.tgz
+ 1470  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1471  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1472  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1473  cat /etc/tibit/oltsim/SimInit.json
+ 1474  rm -rf /opt/tibit/oltsim/database
+ 1475  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1476  terminal width 511
+ 1477  terminal length 0
+ 1478  terminal monitor disable
+ 1479  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1480  terminal width 511
+ 1481  terminal length 0
+ 1482  terminal monitor disable
+ 1483  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1484  terminal width 511
+ 1485  terminal length 0
+ 1486  terminal monitor disable
+ 1487  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1488  terminal width 511
+ 1489  terminal length 0
+ 1490  terminal monitor disable
+ 1491  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1492  terminal width 511
+ 1493  terminal length 0
+ 1494  terminal monitor disable
+ 1495  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1496  terminal width 511
+ 1497  terminal length 0
+ 1498  terminal monitor disable
+ 1499  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1500  terminal width 511
+ 1501  terminal length 0
+ 1502  terminal monitor disable
+ 1503  timeout 10800 /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1504  terminal width 511
+ 1505  terminal length 0
+ 1506  terminal monitor disable
+ 1507  ls /opt/tibit/oltsim/
+ 1508  ifconfig | grep enp1s0f1
+ 1509  ip link add link enp1s0f1 name enp1s0f1.4090 type vlan id 4090
+ 1510  ifconfig enp1s0f1.4090 up
+ 1511  cat /etc/tibit/oltsim/SimInit.json
+ 1512  cp -r /opt/tibit/oltsim/database /opt/tibit/oltsim/database.bak
+ 1513  rm -rf /opt/tibit/oltsim/database
+ 1514  mkdir /opt/tibit/oltsim/database
+ 1515  ls /opt/tibit/oltsim/database.tgz
+ 1516  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1517  sed -i 's/"# of ONUs": .*/"# of ONUs": 1,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1518  sed -i 's/"Max OLTs": .*/"Max OLTs": 1,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1519  rm -rf /opt/tibit/oltsim/database
+ 1520  mkdir /opt/tibit/oltsim/database
+ 1521  ls /opt/tibit/oltsim/database.tgz
+ 1522  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1523  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1524  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1525  rm -rf /opt/tibit/oltsim/database
+ 1526  mkdir /opt/tibit/oltsim/database
+ 1527  ls /opt/tibit/oltsim/database.tgz
+ 1528  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1529  sed -i 's/"# of ONUs": .*/"# of ONUs": 64,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1530  sed -i 's/"Max OLTs": .*/"Max OLTs": 32,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1531  rm -rf /opt/tibit/oltsim/database
+ 1532  mkdir /opt/tibit/oltsim/database
+ 1533  ls /opt/tibit/oltsim/database.tgz
+ 1534  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1535  sed -i 's/"# of ONUs": .*/"# of ONUs": 64,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1536  sed -i 's/"Max OLTs": .*/"Max OLTs": 19,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1537  rm -rf /opt/tibit/oltsim/database
+ 1538  mkdir /opt/tibit/oltsim/database
+ 1539  ls /opt/tibit/oltsim/database.tgz
+ 1540  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1541  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1542  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1543  cat /etc/tibit/oltsim/SimInit.json
+ 1544  rm -rf /opt/tibit/oltsim/database
+ 1545  mkdir /opt/tibit/oltsim/database
+ 1546  ls /opt/tibit/oltsim/database.tgz
+ 1547  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1548  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1549  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1550  cat /etc/tibit/oltsim/SimInit.json
+ 1551  rm -rf /opt/tibit/oltsim/database
+ 1552  mkdir /opt/tibit/oltsim/database
+ 1553  ls /opt/tibit/oltsim/database.tgz
+ 1554  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1555  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1556  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1557  rm -rf /opt/tibit/oltsim/database
+ 1558  mv /opt/tibit/oltsim/database.bak /opt/tibit/oltsim/database
+ 1559  screen -x
+ 1560  cd /auto/tftp-blr-users4/sukeshri
+ 1561  pwd
+ 1562  cd /opt/tibit/oltsim/database/
+ 1563  ls
+ 1564  vi SIM-TOPO-Default-CFG.json
+ 1565  vi SIM-OLT-Default-STATS.json
+ 1566  vi SIM-OLT-Default-CFG.json
+ 1567  ls
+ 1568  cd ..
+ 1569  ./tibit-oltsim -c /etc/tibit/oltsim/SimInit.json 
+ 1570  ps -ef | grep tibitt
+ 1571  ./tibit-oltsim -c /etc/tibit/oltsim/SimInit.json 
+ 1572  cd database
+ 1573  ls
+ 1574  cd .
+ 1575  cd ..
+ 1576  cat SIM-TOPO-Default-CFG.json
+ 1577  cat database/SIM-TOPO-Default-CFG.json
+ 1578  ls
+ 1579  cd database/
+ 1580  ls
+ 1581  ps -ef | grep tibit
+ 1582  cd ..
+ 1583  /opt/tibit/oltsim/tibit-oltsim -c /etc/tibit/oltsim/SimInit.json
+ 1584  ifconfig
+ 1585  ifconfig | grep enp1s0f1
+ 1586  ps -ef | grep tibit
+ 1587  rm -rf database
+ 1588  mkdir database
+ 1589  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1590  sed -i 's/"# of ONUs": .*/"# of ONUs": 5,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1591  sed -i 's/"Max OLTs": .*/"Max OLTs": 5,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1592  ./tibit-oltsim -c /etc/tibit/oltsim/SimInit.json 
+ 1593  rm -rf database
+ 1594  tar -xvf /opt/tibit/oltsim/database.tgz -C /opt/tibit/oltsim/database
+ 1595  sed -i 's/"Max OLTs": .*/"Max OLTs": 7,/' /opt/tibit/oltsim/database/SIM-TOPO-Default-CFG.json
+ 1596  sed -i 's/"# of ONUs": .*/"# of ONUs": 7,/' /opt/tibit/oltsim/database/SIM-OLT-Default-CFG.json
+ 1597  ./tibit-oltsim -c /etc/tibit/oltsim/SimInit.json 
+ 1598  ps -ef | grep tibit
+ 1599  kill -9 55463
+ 1600  ps -ef | grep tibit
+ 1601  ./tibit-oltsim -c /etc/tibit/oltsim/SimInit.json 
+ 1602  source /auto/cafy/cafykit/cafy-exec-rhel7/bin/activate
+ 1603  ./tibit-oltsim -c /etc/tibit/oltsim/SimInit.json 
+ 1604  pwd
+ 1605  ls
+ 1606  cd database/
+ 1607  ls
+ 1608  cd ..
+ 1609  ps -ef | grep tibit
+ 1610  kill -9 65702
+ 1611  ps -ef | grep tibi
+ 1612  kill -9 65703
+ 1613  ps -ef | grep tibit
+ 1614  cd /opt/tibit/oltsim/
+ 1615  ls
+ 1616  ps -ef | grep tibit
+ 1617  rm -rf database
+ 1618  ./tibit-oltsim -c /etc/tibit/oltsim/SimInit.json 
+ 1619  ifconfig -a
+ 1620  ip -br -c link show
+ 1621  ifconfig -a
+ 1622  ethtool enp130s0f0
+ 1623  ifdown enp130s0f0
+ 1624  ethtool enp130s0f0
+ 1625  ethtool enp3s0f0
+ 1626  ip -br -c link show
+ 1627  ethtool enp3s0f0
+ 1628  nmtui
+ 1629  ip -br -c link show
+ 1630  history
+ 1631  nano /etc/netplan/01-network-manager-all.yaml 
+ 1632  nmtui
+ 1633  service network restart
+ 1634  ip -br -c link show
+ 1635  ifup enp1s0f0
+ 1636  ifup enp1s0f1
+ 1637  ifup enp1s0f0
+ 1638  nmtui
+ 1639  nano /etc/netplan/01-network-manager-all.yaml 
+ 1640  nmtui
+ 1641  nano /etc/netplan/01-network-manager-all.yaml 
+ 1642  nmtui
+ 1643  service network restart
+ 1644  nmtui
+ 1645  thtool enp1sofo
+ 1646  thtool enp1s0f0
+ 1647  ethtool enp1s0f0
+ 1648  ifdown enp1s0f0
+ 1649  ifup enp1s0f0
+ 1650  nmtu
+ 1651  nmtui
+ 1652  ping 10.105.237.1
+ 1653  nano /etc/resolv.conf 
+ 1654  nano /etc/environment
+ 1655  wget google.com
+ 1656  netplan apply 
+ 1657  service network restart
+ 1658  cat /etc/os-release 
+ 1659  ip -br -c link show
+ 1660  ifup enp1s0f0
+ 1661  ip -br -c link show
+ 1662  ifup enp1s0f0
+ 1663  nmtui
+ 1664  cat /etc/os-release 
+ 1665  netplan generate 
+ 1666  netplan apply 
+ 1667  reboot
+ 1668  netplan apply 
+ 1669  nmtui
+ 1670  nano /etc/netplan/01-network-manager-all.yaml 
+ 1671  ifconfig -a
+ 1672  ip link set enp1s0f0 up
+ 1673  ip link set enp1s0f0 down
+ 1674  ip link set enp1s0f0 up
+ 1675  nmtui
+ 1676  ip link set enp1s0f0 down
+ 1677  ip link set enp1s0f0 up
+ 1678  netplan generate 
+ 1679  netplan apply 
+ 1680  reboot 
+ 1681  ip link add link enp1s0f1 name enp1s0f1.100 type vlan id 100
+ 1682  ip link set enp1s0f1.100  up
+ 1683  ps aux | grep pp
+ 1684  ps aux | grep ppp
+ 1685  pppoe-server  -I enp1s0f1.100
+ 1686  ps aux | grep ppp
+ 1687  tcpdump -i enp1s0f1.100 &
+ 1688  fg
+ 1689  tcpdump -i enp3s0f0 &
+ 1690  pppoe-start /etc/ppp/pppoe.conf
+ 1691  ps aux | grep ppp
+ 1692  kill 
+ 1693  ps aux | grep ppp
+ 1694  kill 13221
+ 1695  ps aux | grep ppp
+ 1696  kill 13488
+ 1697  ps aux | grep p
+ 1698  ps aux | grep ppp
+ 1699  pppoe-start /etc/ppp/pppoe.conf
+ 1700  fg
+ 1701  tcpdump -i enp3s0f0 
+ 1702  tcpdump -i enp3s0f0 -w s.pcap
+ 1703  scp s.pcap saps@173.39.49.180:/auto/tftp-blr-users2/saps/s.pcap 
+ 1704  tcpdump --help
+ 1705  tcpdump -i enp3s0f0 -w s.pcap
+ 1706  scp s.pcap saps@173.39.49.180:/auto/tftp-blr-users2/saps/s.pcap 
+ 1707  ps aux | grep ppp
+ 1708  kill 13646 13666
+ 1709  ps aux | grep ppp
+ 1710  tcpdump -i enp3s0f0 -w s.pcap &
+ 1711  ps aux | grep ppp
+ 1712  pppoe-start /etc/ppp/pppoe.conf
+ 1713  fg
+ 1714  scp s.pcap saps@173.39.49.180:/auto/tftp-blr-users2/saps/s.pcap 
+ 1715  pwd
+ 1716  exit
+ 1717  tcpdump -i enp3s0f0
+ 1718  tcpdump -i enp3s0f0 &
+ 1719  pppoe-start /etc/ppp/pppoe.conf
+ 1720  vim /etc/ppp/pppoe.conf
+ 1721  sudo ip addr add 100.0.1.1/24 dev enp3s0f0
+ 1722  fg
+ 1723  ip route
+ 1724  ifconfig enp3s0f0
+ 1725  ip netns add ns1
+ 1726  ip netns
+ 1727  ip netns add ns2
+ 1728  ip netns
+ 1729  ip link set enp3s0f0 ns1 up
+ 1730  ip link set enp3s0f0 netns ns1 up
+ 1731  ip link set enp1s0f1 netns ns2 up
+ 1732  ifconfig 
+ 1733  ifconfig enp1s0f1
+ 1734  ip netns exec ns2 ifconfig enp1s0f1
+ 1735  ip netns exec ns2 ifconfig enp1s0f1.100
+ 1736  ip link set enp1s0f1.100 netns ns2 up
+ 1737  ip netns exec ns2 ifconfig enp1s0f1.100
+ 1738  ip netns exec ns1 ifconfig enp3s0f0
+ 1739  sudo ip addr add 100.0.1.1/24 dev enp3s0f0
+ 1740  sudo ip addr add 100.0.1.1/24 dev enp1s0f1.100
+ 1741  ip netns exec ns1 sudo ip addr add 100.0.1.1/24 dev enp3s0f0
+ 1742  ip netns exec ns2 sudo ip addr add 100.0.1.2/24 dev enp1s0f1.100
+ 1743  ip netns exec ns1 ifconfig enp3s0f0
+ 1744  ip netns exec ns2 ifconfig enp1s0f1.100
+ 1745  ip netns exec ns2 sudo ip addr add 100.0.1.2/24 dev enp1s0f1.100 broadcast 100.0.1.255
+ 1746  ip netns exec ns2 sudo ip addr del 100.0.1.2/24 dev enp1s0f1.100
+ 1747  ip netns exec ns1 sudo ip addr del 100.0.1.1/24 dev enp3s0f0
+ 1748  ip netns exec ns2 sudo ip addr add 100.0.1.2/24 dev enp1s0f1.100 broadcast 100.0.1.255
+ 1749  ip netns exec ns1 sudo ip addr add 100.0.1.1/24 dev enp3s0f0 broadcast 100.0.1.255
+ 1750  ip netns exec ns1 ifconfig enp3s0f0
+ 1751  ip netns exec ns2 ifconfig enp1s0f1.100
+ 1752  ip netns exec ns1 ping 100.0.1.2
+ 1753  ip netns exec ns1 ping --help
+ 1754  ip netns exec ns1 ping -i 1 100.0.1.2
+ 1755  ip netns exec ns1 ping -i 0 100.0.1.2
+ 1756  ps aux | grep ppp
+ 1757  ip netns ns1 exec tcpdump -i enp3s0f0 &
+ 1758  ip netns
+ 1759  ip netns exec ns1 tcpdump -i enp3s0f0 &
+ 1760  ip netns exec ns1 pppoe-start /etc/ppp/pppoe.conf
+ 1761  pppoe-start /etc/ppp/pppoe.conf
+ 1762  ip netns delete ns1
+ 1763  ip netns delete ns2
+ 1764  ifconfig
+ 1765  ifconfig -a
+ 1766  ip link set enp3s0f0 netns 1
+ 1767  ip netns exec ns1 ip link set enp3s0f0 netns 1
+ 1768  ip netns
+ 1769  ip link
+ 1770  ip link show
+ 1771  sudo systemctl restart networking
+ 1772  systemctl status networking.service
+ 1773  sudo systemctl restart NetworkManager
+ 1774  systemctl status NetworkManager
+ 1775  ip link show
+ 1776  reboot 
+ 1777  ifconfig -a
+ 1778  ping 10.105.237.1
+ 1779  nmtui
+ 1780  ip link set enp1s0f0 up
+ 1781  ip -br -c link show
+ 1782  ifup enp1s0f0
+ 1783  route -n
+ 1784  systemctl restart networking.service 
+ 1785  netplan apply 
+ 1786  netplan --debug generate
+ 1787  netplan apply 
+ 1788  nmtui
+ 1789  ip -br -c link show
+ 1790  ip link set enp1s0f0 up
+ 1791  ip link set enp1s0f0 down 
+ 1792  ip -br -c link show
+ 1793  ip link set enp1s0f0 up
+ 1794  netplan apply 
+ 1795  ip link set enp1s0f0 up
+ 1796  vi /etc/netplan/01-network-manager-all.yaml 
+ 1797  netplan apply
+ 1798  netplan applynmtui
+ 1799  nmtui
+ 1800  netplan apply
+ 1801  vi /etc/netplan/01-network-manager-all.yaml 
+ 1802  netplan apply
+ 1803  service networking restart
+ 1804  netplan --debug apply
+ 1805  vi /etc/netplan/01-network-manager-all.yaml 
+ 1806  netplan apply
+ 1807  netplan --debug apply
+ 1808  netplan apply
+ 1809  netplan --debug apply
+ 1810  netplan apply
+ 1811  vi /etc/netplan/01-network-manager-all.yaml 
+ 1812  ifconfig -a
+ 1813  vi /etc/netplan/01-network-manager-all.yaml 
+ 1814  nmtui
+ 1815  ping 10.105.237.1
+ 1816  nmtui
+ 1817  /etc/init.d/network restart
+ 1818  service NetworkManager restart
+ 1819  init 6
+ 1820  ip -br -c link show
+ 1821  init 6
+ 1822  wget google.com
+ 1823  ping 10.105.237.,1
+ 1824  ping 10.105.237.1
+ 1825  wget google.com
+ 1826  exit
+ 1827  wgte google.com
+ 1828  wget google.com
+ 1829  screen -x
+ 1830  screen
+ 1831  screen -x
+ 1832  exit
+ 1833  cd /etc
+ 1834  ls
+ 1835  ls tibit/
+ 1836  cd tibit/
+ 1837  ls
+ 1838  vim oltsim/
+ 1839  cd cd oltsim/
+ 1840  ls
+ 1841  cd oltsim/
+ 1842  ls
+ 1843  cd database/
+ 1844  ls
+ 1845  cd 
+ 1846  vim /etc/mongod.conf
+ 1847  exit
+ 1848  ls
+ 1849  exit
+ 1850  ip link add link enp1s0f1 name enp1s0f1.100 type vlan id 100
+ 1851  ip link set enp1s0f1.100  up
+ 1852  pppoe-server -I enp1s0f1.100
+ 1853  tcpdump -i enp3s0f0
+ 1854  tcpdump -i enp3s0f0 &
+ 1855  pppoe-start /etc/ppp/pppoe.conf
+ 1856  tcpdump -i enp1s0f1.100 &
+ 1857  pppoe-start /etc/ppp/pppoe.conf
+ 1858  tcpdump -i enp1s0f1.100 &
+ 1859  fg
+ 1860  tcpdump -i enp1s0f1.100 &
+ 1861  fg
+ 1862  tcpdump -i enp1s0f1 &
+ 1863  pppoe-start /etc/ppp/pppoe.conf
+ 1864  ps aux | grep ppp
+ 1865  kill 5329
+ 1866  ps aux | grep ppp
+ 1867  tcpdump -i enp3s0f0 &
+ 1868  pppoe-start /etc/ppp/pppoe.conf
+ 1869  ps aux | grep ppp
+ 1870  kill 9561
+ 1871  ps aux | grep ppp
+ 1872  kill 9581
+ 1873  ps aux | grep ppp
+ 1874  pppoe-start /etc/ppp/pppoe.conf
+ 1875  tcpdump --help
+ 1876  fg
+ 1877  tcpdump -i enp3s0f0 -e &
+ 1878  fg
+ 1879  ps aux | grep ppp
+ 1880  kill 9911 9931
+ 1881  ps aux | grep ppp
+ 1882  tcpdump -i enp3s0f0 -e &
+ 1883  pppoe-start /etc/ppp/pppoe.conf
+ 1884  FG
+ 1885  fg
+ 1886  tcpdump -i enp3s0f0 -e &
+ 1887  pppoe-start /etc/ppp/pppoe.conf
+ 1888  ps aux 
+ 1889  ps aux  | grep ppp
+ 1890  fg
+ 1891  ps aux  | grep ppp
+ 1892  kill 34517 34537
+ 1893  ps aux  | grep ppp
+ 1894  tcpdump -i enp3s0f0 -e &
+ 1895  pppoe-start /etc/ppp/pppoe.conf
+ 1896  ifconfig
+ 1897  pppoe-start /etc/ppp/pppoe.conf
+ 1898  ps aux  | grep ppp
+ 1899  kill 34628 34648
+ 1900  ps aux  | grep ppp
+ 1901  ifconfig
+ 1902  kill 34628 34648
+ 1903  fg
+ 1904  ps aux  | grep ppp
+ 1905  tcpdump -i enp3s0f0 -e &
+ 1906  pppoe-start /etc/ppp/pppoe.conf
+ 1907  fg
+ 1908  ps aux | grep ppp
+ 1909  kill 34756 34776
+ 1910  ps aux | grep ppp
+ 1911  tcpdump -i enp3s0f0 -e &
+ 1912  pppoe-start /etc/ppp/pppoe.conf
+ 1913  ps aux | grep ppp
+ 1914  kill 
+ 1915  fg
+ 1916  ps aux | grep ppp
+ 1917  kill 34873 34893
+ 1918  ps aux | grep ppp
+ 1919  tcpdump -i enp3s0f0 -w vlan_untag.pcap &
+ 1920  pppoe-start /etc/ppp/pppoe.conf
+ 1921  fg
+ 1922  scp vlan_untag.pcap saps@173.39.49.180:/nobackup/saps/
+ 1923  ps aux | grep ppp
+ 1924  kill 34991 35011
+ 1925  ps aux | grep ppp
+ 1926  tcpdump -i enp3s0f0 -w vlan_addctag.pcap &
+ 1927  pppoe-start /etc/ppp/pppoe.conf
+ 1928  fg
+ 1929  scp vlan_addctag.pcap saps@173.39.49.180:/nobackup/saps/
+ 1930  pwd
+ 1931  exit
+ 1932  pwd
+ 1933  cd ragha/
+ 1934  ls
+ 1935  ls -lrt
+ 1936  cd sai-grpc/
+ 1937  ls
+ 1938  cd ..
+ 1939  ls
+ 1940  ls -lrt
+ 1941  cd SAI-GR/
+ 1942  ls
+ 1943  cd sai-grpc/
+ 1944  ls
+ 1945  cd SAI/
+ 1946  ls
+ 1947  vi generate_dash_api.sh 
+ 1948  ls
+ 1949  vi sai_api_gen.py 
+ 1950  grep -r message *
+ 1951  grep -r message * 
+ 1952  grep -r message *  | more
+ 1953  cd SAI/meta/
+ 1954  ls
+ 1955  grep -r message *  | more
+ 1956  ls
+ 1957  rm sai.pb-c.c
+ 1958  rm sai.pb-c.h
+ 1959  grep -r message *  | more
+ 1960  rm sai.proto 
+ 1961  grep -r message *  | more
+ 1962  vi templates/sai.thrift.tt 
+ 1963  pwd
+ 1964  ls
+ 1965  cd ragha
+ 1966  ls
+ 1967  ls -lrt
+ 1968  cd sai-grpc/
+ 1969  ls
+ 1970  cd ..
+ 1971  cd SAI-GR
+ 1972  ls
+ 1973  cd sai-grpc/
+ 1974  ls
+ 1975  git status
+ 1976  cd SAI/SAI/
+ 1977  ls
+ 1978  cd meta/
+ 1979  ls
+ 1980  ls -lrt
+ 1981  history
+ 1982  history > 1
+ 1983  vi 1
+ 1984  ls
+ 1985  screen -x
+ 1986  screen -x
+ 1987  cd ragha
+ 1988  ls
+ 1989  cd sai-grpc-jan-24/
+ 1990  ls
+ 1991  cd sai-grpc/
+ 1992  ls
+ 1993  cd ../..
+ 1994  mkdir dash-commit
+ 1995  cd dash-commit/
+ 1996  git@github.com:raghunandan403/SAI-GRPC.git
+ 1997  git clone git@github.com:raghunandan403/SAI-GRPC.git
+ 1998  exit
+ 1999  screen -x
+ 2000  git ls-remote https://github.com/raghunandan403/SAI-GRPC.git
+ 2001  sudo ufw disable
+ 2002  git ls-remote https://github.com/raghunandan403/SAI-GRPC.git
+ 2003  export http_proxy=http://proxy-wsa.esl.cisco.com:80/
+ 2004  export ftp_proxy=http://proxy.esl.cisco.com:80/
+ 2005  export HTTPS_PROXY=http://proxy-wsa.esl.cisco.com:80/
+ 2006  export https_proxy=http://proxy-wsa.esl.cisco.com:80/
+ 2007  export HTTP_PROXY=http://proxy-wsa.esl.cisco.com:80/
+ 2008  git ls-remote https://github.com/raghunandan403/SAI-GRPC.git
+ 2009  git ls-remote git@github.com:grpc/grpc.git
+ 2010  git ls-remote https://github.com/raghunandan403/SAI-GRPC.git
+ 2011  sudo apt-get install protobuf-compiler libprotobuf-c-dev
+ 2012  git clone --recursive -b v1.60.0 https://github.com/grpc/grpc
+ 2013  ls -lrt
+ 2014  cd grpc/
+ 2015  mkdir -p cmake/build
+ 2016  pushd cmake/build
+ 2017  cmake -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr/local ../..
+ 2018  apt-get install cmake
+ 2019  cmake -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr/local ../..
+ 2020  make -j4
+ 2021  popd
+ 2022  cd ../ragha/
+ 2023  ls
+ 2024  ls -lrt
+ 2025  cd test-grpc/
+ 2026  ls
+ 2027  cd proto/
+ 2028  protoc --c_out=. --grpc-c_out=. example.proto
+ 2029  ls
+ 2030  sudo apt-get install protobuf-compiler-grpc
+ 2031  protoc --c_out=. --grpc-c_out=. example.proto
+ 2032  find /usr -name protoc-gen-grpc-c
+ 2033  find / -name protoc-gen-grpc-c
+ 2034  ls /
+ 2035  find ~/ -name protoc-gen-grpc-c
+ 2036  protoc-gen-grpc-c
+ 2037  protoc --c_out=. --grpc-c_out=. --plugin=/path/to/grpc_cpp_plugin example.proto
+ 2038  protoc --c_out=. --grpc-c_out=. --plugin=~/grpc/cmake/build/grpc_cpp_plugin example.proto
+ 2039  ls ~/grpc/cmake/build/grpc_cpp_plugin
+ 2040  ~/grpc/cmake/build/grpc_cpp_plugin 
+ 2041  protoc --c_out=. --grpc-c_out=. --plugin=/root/grpc/cmake/build/grpc_cpp_plugin example.proto
+ 2042  ls
+ 2043  cd ..
+ 2044  mkdir test-grpc-cpp
+ 2045  cd test-grpc-cpp/
+ 2046  ls
+ 2047  vi foo.proto
+ 2048  vi foo_client.c
+ 2049  vi foo_server.c
+ 2050  autoconf automake libtool curl make g++ unzip
+ 2051  apt-get autoconf
+ 2052  apt-get install autoconf
+ 2053  apt-get install automake
+ 2054  apt-get install libtool
+ 2055  apt-get install curl
+ 2056  apt-get install g++
+ 2057  apt-get install unzip
+ 2058  git clone git@github.com:Juniper/grpc-c.git
+ 2059  ls
+ 2060  unzip grpc-c-master.zip 
+ 2061  ls
+ 2062  cd grpc-c-master/
+ 2063  ;s
+ 2064  ls
+ 2065  cd t
+ 2066  cd third_party/
+ 2067  ls
+ 2068  cd grpc/
+ 2069  ls
+ 2070  cd ..
+ 2071  ls
+ 2072  vi Makefile.am 
+ 2073  autoreconf --install
+ 2074  git submodule update --init
+ 2075  ./builddeps.sh
+ 2076  ls
+ 2077  which protoc
+ 2078  protoc -version
+ 2079  protoc -v
+ 2080  protoc --v
+ 2081  protoc --help
+ 2082  ptotoc
+ 2083  cd ../..
+ 2084  git clone https://github.com/grpc/grpc
+ 2085  ls
+ 2086  ls -lrt
+ 2087  cd dash
+ 2088  ls
+ 2089  ls -lrt
+ 2090  cd DASH-GRPC/
+ 2091  ls
+ 2092  cd DASH/
+ 2093  ls
+ 2094  cd ../..
+ 2095  cd ..
+ 2096  ls
+ 2097  cd SAI-GR/ls
+ 2098  cd SAI-GR/
+ 2099  ls
+ 2100  cd sai-grpc/
+ 2101  ls
+ 2102  cd SAI/
+ 2103  ls
+ 2104  cd SAI/
+ 2105  ls
+ 2106  cd meta/
+ 2107  ls
+ 2108  ls -lrt
+ 2109  cd ~/ragha/SAI
+ 2110  ls
+ 2111  cd SAI/meta/
+ 2112  ls
+ 2113  ls -lrt
+ 2114  cd ../..
+ 2115  cd ..
+ 2116  ls
+ 2117  cd dash
+ 2118  ls
+ 2119  cd meta_changes_grpc/
+ 2120  ls
+ 2121  ls -lrt
+ 2122  cd ..
+ 2123  ls
+ 2124  cd DASH
+ 2125  ls
+ 2126  cd dash-pipeline/
+ 2127  ls
+ 2128  cd SAI/SAI/
+ 2129  ls
+ 2130  cd meta/
+ 2131  ls -lrt
+ 2132  cd ..
+ 2133  cd ../..
+ 2134  cd ..
+ 2135  find . -name "sai.proto"
+ 2136  cd ./dash/DASH-GRPC/DASH/dash-pipeline/SAI/SAI/meta/
+ 2137  ls -lrt
+ 2138  ls
+ 2139  cd ..
+ 2140  ls
+ 2141  cd ..
+ 2142  ls
+ 2143  cd ..
+ 2144  ls
+ 2145  cd SAI
+ 2146  ls
+ 2147  pwd
+ 2148  history
+ 2149  history > 1
