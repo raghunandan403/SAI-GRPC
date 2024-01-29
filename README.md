@@ -3,7 +3,7 @@ Existing code is a copy of SAI @ https://github.com/opencomputeproject/SAI
 - This repo generates a .thrift apis using pearl and toolkit template.
 
 # What this repo is:
-We have modified the existing code and made it to generate a .proto.
+We have modified the existing SAI code (SAI @ https://github.com/opencomputeproject/SAI) and made it to generate a .proto.
 
 # Will this code be merged
 This code will be merged to the https://github.com/opencomputeproject/SAI once we have take care of generating the .thrift and .proto based on the target given by the user.
