@@ -4,7 +4,7 @@
 
 [%- BLOCK typedef_declaration -%]
     [%- IF dbg -%]
-// [% type.type.name %] [% type.name %][% IF type.raw %] (raw)[% END %];
+    // [% type.type.name %] [% type.name %][% IF type.raw %] (raw)[% END %];
 
     [%- END -%]
 message [% type.grpc_name %] {
@@ -22,6 +22,42 @@ message [% type.grpc_name %] {
         [%- PROCESS typedef_declaration -%]
     [%- END -%]
 [% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
+[%- BLOCK define_enums -%]
+// SAI ENUMS
+[%- SET generated_enums = {} %]
+[% FOREACH api IN apis.keys.sort %]
+    [% FOREACH function IN apis.$api.functions %]
+        [%- IF apis.$api.objects.${function.object}.attrs.name %]
+        [%- SET enum_name = "grpc" _ apis.$api.objects.${function.object}.attrs.name %]
+        [%- UNLESS generated_enums.$enum_name %]
+
+enum [%- enum_name %] {
+    [%- SET is_enum_first = "YES" %]
+    [% FOREACH elem IN apis.$api.objects.${function.object}.attrs.elements %]
+        [%- FOREACH attr IN elem %]
+            [%- IF attr.value && is_enum_first == 'YES' %]
+                [%- SET is_enum_first = "NO" -%]
+                [%- attr.value -%] = 0;
+            [% END %]
+            [%- IF attr.name && attr.value %]
+//                [%- attr.name %] = [%- attr.value %];
+                [%- IF not loop.last %];[%- END %]
+            [%- END %]
+        [%- END %]
+    [% END %];
+}
+            [%- generated_enums.$enum_name = 1 -%]
+        [%- END -%]
+    [% END %]
+    [%- END -%]
+[%- END -%]
+// SAI ENUMS END
+[%- END -%]
 
 [%- ######################################################################## -%]
 
@@ -112,18 +148,33 @@ message sai_grpc_string_response {
 [%- BLOCK struct_declaration -%]
 message [% struct.grpc_name %] {
     [%- id = 1; FOREACH member IN struct.members %]
-        [%- IF dbg %]
+        [%- # IF dbg %]
   // [% member.type.name %] [% member.name %];
-        [%- END -%]
+        [%- # END -%]
         [%- # TODO: The condition is a workaround, it should be removed and only 'ELSE' part should be kept -%]
+        [%- IF struct.grpc_name == 'sai_grpc_attribute_value_t' AND id == 1 %]
+    oneof sai_grpc_attribute_value {
+        [%- END %]
         [%- IF struct.grpc_name == 'sai_grpc_attr_condition_t' AND member.type.grpc_name == 'sai_grpc_attribute_value_t' AND member.name == 'condition' -%]
 
     int64 [% member.grpc_name %] = [% id; id = id + 1 %];
         [%- ELSE -%]
-
+            [%- IF member.grpc_name == 'count' %]
+                [%- SET temp_variable = 'skip_list' %]
     [% member.type.grpc_name %] [% member.grpc_name %] = [% id; id = id + 1 %];
+            [%- ELSE -%]
+                [% IF temp_variable == 'skip_list' %]
+    repeated [% member.type.grpc_name %] [% member.grpc_name %] = [% id; id = id + 1 %];
+                [%- SET temp_variable = 'NONE' %]
+                [%- ELSE %]
+    [% member.type.grpc_name %] [% member.grpc_name %] = [% id; id = id + 1 %];
+                [%- END %]
+            [%- END %]
         [%- END -%]
     [%- END %]
+        [%- IF struct.grpc_name == 'sai_grpc_attribute_value_t' %]
+    }
+        [%- END %]
 }
 [% END -%]
 
@@ -150,6 +201,7 @@ message [% struct.grpc_name %] {
     [%- END %]
 
     [%- PROCESS define_attribute_list -%]
+    [%- PROCESS define_stats_ptr_list -%]
 [% END -%]
 
 [%- ######################################################################## -%]
@@ -180,11 +232,22 @@ message sai_grpc_response {
 
 [%- ######################################################################## -%]
 
+[%- BLOCK define_stats_ptr_list -%]
+// Stats attribute list
+message sai_grpc_u64_list_t {
+    repeated sai_grpc_uint64_t u64 = 1;
+}
+[% END -%]
+
+[%- ######################################################################## -%]
+
+[%- ######################################################################## -%]
+
 [%- BLOCK define_attribute_list -%]
 // common attribute list
 message sai_grpc_attribute_list_t {
-    repeated sai_grpc_attribute_t attr_list = 1;
-    sai_grpc_int32_t attr_count = 2;
+    sai_grpc_int32_t attr_count = 1;
+    repeated sai_grpc_attribute_t attr_list = 2;
 }
 [% END -%]
 
@@ -193,23 +256,26 @@ message sai_grpc_attribute_list_t {
 [%- ######################################################################## -%]
 
 [%- BLOCK function_debug_info -%]
-    [%- IF dbg -%]
+    [%- # IF dbg -%]
 
     // [% function.dbg_info %]
 
         [%- IF function.object -%]
             [%- IF function.operation == 'create' -%]
-    // [% function.object %] mandatory attrs: [% FOREACH attr IN apis.$api.objects.${function.object}.attrs.mandatory %][% attr.simple_name %], [% END %]
-
-            [%- END -%]
-            [%- IF function.operation == 'stats' -%]
-    // [% function.object %] stats: [% FOREACH stat IN apis.$api.objects.${function.object}.stats.all %][% stat.simple_name %], [% END %]
+    // [% function.object %] mandatory attrs: 
+    // [%- FOREACH attr IN apis.$api.objects.${function.object}.attrs.mandatory -%] [%- attr.name %], [% END %]
+            [%- ELSIF function.operation == 'stats' -%]
+    // [% function.object %] stats: 
+    // [%- FOREACH stat IN apis.$api.objects.${function.object}.stats.all -%] [%- stat.simple_name -%], [%- END -%]
             [%- ELSE -%]
-    // [% function.object %] mandatory attrs: [% FOREACH attr IN apis.$api.objects.${function.object}.attrs.${function.operation} %][% attr.simple_name %], [% END %]
+    // [% function.object %] attrs: 
+    // [% FOREACH attr IN apis.$api.objects.${function.object}.attrs.${function.operation} %] 
+        // [% attr.name %], [% END %]
             [%- END %]
 
         [%- END -%]
-    [%- END -%]
+    [%- # END -%]
+        // [% RAGHA %]
 [% END -%]
 
 [%- ######################################################################## -%]
@@ -224,6 +290,9 @@ message sai_grpc_attribute_list_t {
     [%- ELSIF function.rpc_return.type.grpc_name == 'string' -%]
         returns (sai_grpc_string_response);
 
+    [%- ELSIF function.rpc_return.type.grpc_name == 'sai_grpc_uint64_t' || function.rpc_return.type.grpc_name == 'sai_grpc_uint64_t ' -%]
+        returns (sai_grpc_u64_list_t);
+
     [%- ELSE -%]
         returns ([% function.rpc_return.type.grpc_name %]);
     [% END -%]
@@ -237,6 +306,9 @@ message sai_grpc_attribute_list_t {
 [%- BLOCK define_api_functions -%]
     [%- FOREACH function IN apis.$api.functions -%]
         [%- PROCESS function_debug_info -%]
+        [%- IF api -%]
+    // [% api %] API
+        [%- END %]
 
         [%- PROCESS function_declaration -%]
     [%- END -%]
@@ -255,9 +327,8 @@ message sai_grpc_attribute_list_t {
 
     [%- FOREACH api IN apis.keys.sort -%]
         [%- IF apis.$api.functions.size and api != 'common' %]
-    // [% api %] API
-
-            [%- PROCESS define_api_functions -%]
+    // Start of [% api %] API
+            [%- PROCESS define_api_functions api = api -%]
         [%- END -%]
 
     [%- END -%]
@@ -271,7 +342,17 @@ message sai_grpc_attribute_list_t {
 message [% function.grpc_name %]_msg_args {
     sai_grpc_int32_t tid = 1;
     [%- id = 2; FOREACH rpcarg IN function.args %]
+    [%- IF rpcarg.type.grpc_name != 'sai_grpc_attribute_t ' && rpcarg.type.grpc_name != 'sai_grpc_attribute_t' %]
+        [%- IF rpcarg.name == 'attr_count' || rpcarg.name == 'attr_count ' %]
+    optional [% rpcarg.type.grpc_name %] [% rpcarg.name %] = [%- id; id = id + 1 %];
+        [%- ELSIF rpcarg.name == 'counter_ids'  || rpcarg.name == 'counters' %]
+    repeated [% rpcarg.type.grpc_name %] [% rpcarg.name %] = [%- id; id = id + 1 %];
+        [%- ELSE %]
     [% rpcarg.type.grpc_name %] [% rpcarg.name %] = [%- id; id = id + 1 %];
+        [%- END %]
+    [%- ELSE %]
+    repeated [% rpcarg.type.grpc_name %] [% rpcarg.name %] = [%- id; id = id + 1 %];
+    [%- END %]
     [%- END %]
 }
 [% END -%]
@@ -289,6 +370,8 @@ syntax = "proto3";
 
 
 [% PROCESS define_typedefs %]
+
+[% PROCESS define_enums %]
 
 [% PROCESS define_structs %]
 
